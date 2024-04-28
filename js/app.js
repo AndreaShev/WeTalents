@@ -3539,11 +3539,11 @@
             observeParents: true,
             slidesPerView: 1,
             spaceBetween: 0,
-            autoHeight: true,
             speed: 300,
             pagination: {
                 el: ".swiper-pagination",
-                clickable: true
+                clickable: true,
+                type: "progressbar"
             },
             on: {}
         });
@@ -3574,6 +3574,18 @@
     const indicator = document.querySelector(".indicator");
     emailInput.addEventListener("input", (function() {
         if (emailInput.value) indicator.classList.add("show-indicator"); else indicator.classList.remove("show-indicator");
+    }));
+    const moveButton = document.getElementById("logo");
+    document.querySelector(".we-talented__image");
+    const contentBlock = document.querySelector(".we-talented__content");
+    moveButton.addEventListener("click", (function() {
+        if (window.innerWidth < 767) if (!contentBlock.classList.contains("moved")) {
+            contentBlock.style.transform = "translateY(-20%)";
+            contentBlock.classList.add("moved");
+        } else {
+            contentBlock.style.transform = "translateY(0)";
+            contentBlock.classList.remove("moved");
+        }
     }));
     window["FLS"] = true;
     isWebp();
