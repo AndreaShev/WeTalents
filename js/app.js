@@ -3570,23 +3570,54 @@
     acceptButtons.forEach((function(button) {
         button.addEventListener("click", hideCookieBanner);
     }));
-    const emailInput = document.getElementById("email");
-    const indicator = document.querySelector(".indicator");
-    emailInput.addEventListener("input", (function() {
-        if (emailInput.value) indicator.classList.add("show-indicator"); else indicator.classList.remove("show-indicator");
-    }));
     const moveButton = document.getElementById("logo");
-    document.querySelector(".we-talented__image");
     const contentBlock = document.querySelector(".we-talented__content");
     moveButton.addEventListener("click", (function() {
-        if (window.innerWidth < 767) if (!contentBlock.classList.contains("moved")) {
-            contentBlock.style.transform = "translateY(-20%)";
-            contentBlock.classList.add("moved");
-        } else {
-            contentBlock.style.transform = "translateY(0)";
-            contentBlock.classList.remove("moved");
-        }
+        if (window.innerWidth < 767) contentBlock.classList.toggle("animate");
     }));
+    const emailInput = document.getElementById("email");
+    const emailInputContainer = document.querySelector(".email-we-talented__input");
+    const indicator = document.querySelector(".indicator");
+    const successMessage = document.getElementById("successMessage");
+    const errorMessage = document.getElementById("errorMessage");
+    emailInput.addEventListener("input", (function() {
+        const email = emailInput.value;
+        if (email) indicator.classList.add("show-indicator"); else indicator.classList.remove("show-indicator");
+    }));
+    emailInput.addEventListener("keydown", (function(event) {
+        const key = event.key;
+        if (key === "Enter") validateAndShowMessage();
+    }));
+    indicator.addEventListener("click", (function() {
+        validateAndShowMessage();
+    }));
+    emailInput.addEventListener("focusout", (function() {
+        clearMessages();
+    }));
+    function validateAndShowMessage() {
+        const email = emailInput.value;
+        if (validateEmail(email)) showSuccessMessage(); else showErrorMessage();
+    }
+    function validateEmail(email) {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+    }
+    function showSuccessMessage() {
+        emailInputContainer.style.display = "none";
+        successMessage.style.display = "block";
+        errorMessage.style.display = "none";
+    }
+    function showErrorMessage() {
+        successMessage.style.display = "none";
+        errorMessage.style.display = "block";
+        emailInput.style.color = "#da3832";
+    }
+    function clearMessages() {
+        successMessage.style.display = "none";
+        errorMessage.style.display = "none";
+        emailInput.style.color = "";
+        indicator.classList.remove("show-indicator");
+    }
     window["FLS"] = true;
     isWebp();
 })();
