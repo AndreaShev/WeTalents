@@ -3542,10 +3542,17 @@
             speed: 300,
             pagination: {
                 el: ".swiper-pagination",
-                clickable: true,
-                type: "progressbar"
+                clickable: true
             },
-            on: {}
+            on: {
+                init: function() {
+                    var slideCount = this.slides.length;
+                    var slideMargin = parseFloat(window.getComputedStyle(this.slides[0]).marginRight);
+                    document.documentElement.style.setProperty("--slide-count", slideCount);
+                    document.documentElement.style.setProperty("--slide-margin", slideMargin + "px");
+                    this.pagination.update();
+                }
+            }
         });
     }
     window.addEventListener("load", (function(e) {

@@ -218,7 +218,6 @@ h6 {
 
 .we-talented__mainblock {
   display: block;
-  margin-bottom: 140px;
 }
 
 @supports (margin-top: clamp( 1.8125rem , 0.4338235294rem  +  5.8823529412vw , 6.125rem )) {
@@ -509,18 +508,27 @@ h6 {
   opacity: 1;
 }
 
-.swiper-horizontal > .swiper-pagination-progressbar,
-.swiper-pagination-progressbar.swiper-pagination-horizontal,
-.swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
-.swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+.swiper-pagination-bullet {
+  width: calc((100% - (var(--slide-count) - 1) * var(--slide-margin)) / var(--slide-count)) !important;
   height: 6px !important;
-  top: auto !important;
-  bottom: 49px !important;
+  background: rgba(26, 26, 26, 0.6) !important;
   border-radius: 100px !important;
 }
 
-.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+.swiper-pagination-bullet-active {
   background: #fff !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+  bottom: 49px !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 !important;
 }
 
 .heart-icon {
@@ -667,6 +675,10 @@ h6 {
   font-weight: 400;
   font-size: 13px;
   color: #da3832;
+}
+
+body {
+  overflow: hidden;
 }
 
 /**
@@ -1513,10 +1525,10 @@ button.swiper-pagination-bullet {
     max-height: 65vh;
   }
 
-  .swiper-horizontal > .swiper-pagination-progressbar,
-  .swiper-pagination-progressbar.swiper-pagination-horizontal,
-  .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
-  .swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
     top: 30px !important;
     bottom: auto !important;
   }
@@ -1611,6 +1623,10 @@ button.swiper-pagination-bullet {
     width: 295px;
     height: 50px;
   }
+
+  .success {
+    margin-top: 27px;
+  }
 }
 
 @media (max-width: 47.99875em) {
@@ -1664,12 +1680,15 @@ button.swiper-pagination-bullet {
     overflow: hidden;
   }
 
-  .swiper-horizontal > .swiper-pagination-progressbar,
-  .swiper-pagination-progressbar.swiper-pagination-horizontal,
-  .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite,
-  .swiper-vertical > .swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+  .swiper-pagination-bullet {
     height: 3px !important;
     border-radius: 62px !important;
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
     top: 60px !important;
   }
 
