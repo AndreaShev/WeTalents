@@ -3622,6 +3622,29 @@
             }
         }
     }));
+    function checkContentFit() {
+        const contentHeight = document.documentElement.scrollHeight;
+        const viewportHeight = window.innerHeight;
+        const swipeButton = document.querySelector(".swipe-indicator");
+        const talentForm = document.querySelector(".we-talented__email");
+        const talentFooter = document.querySelector(".we-talented__footer");
+        if (contentHeight > viewportHeight && window.innerWidth < 767) {
+            talentForm.style.display = "none";
+            talentFooter.style.display = "none";
+            swipeButton.style.display = "flex";
+        }
+    }
+    window.addEventListener("DOMContentLoaded", checkContentFit);
+    window.addEventListener("resize", checkContentFit);
+    const swipeButton = document.querySelector(".swipe-indicator");
+    const talentForm = document.querySelector(".we-talented__email");
+    const talentFooter = document.querySelector(".we-talented__footer");
+    swipeButton.addEventListener("click", (function() {
+        contentBlock.classList.add("animate");
+        swipeButton.style.display = "none";
+        talentForm.style.display = "block";
+        talentFooter.style.display = "block";
+    }));
     window["FLS"] = true;
     isWebp();
 })();

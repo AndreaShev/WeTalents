@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20240501113516" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20240501153033" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon.png" />
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -27,28 +27,6 @@
 		</header>
 		<main class="main">
 			<div class="main__container">
-				<!-- <style>
-      /* Стили для анимации кнопки и свайпа на мобильных устройствах */
-      @media (max-width: 767px) {
-        .email-input {
-          position: relative;
-        }
-        .email-input input[type="email"] {
-          padding-right: 40px;
-        }
-        .email-input .swipe-indicator {
-          position: absolute;
-          top: 50%;
-          right: 10px;
-          transform: translateY(-50%);
-          width: 30px;
-          height: 30px;
-          background: #ccc;
-          border-radius: 50%;
-          cursor: pointer;
-        }
-      }
-    </style> -->
 				<div class="we-talented">
 					<div class="we-talented__body">
 						<div class="we-talented__content">
@@ -69,7 +47,11 @@
 											<span> Creative Media Employers</span>
 										</p>
 									</div>
+									<div class="swipe-indicator">
+										<p>Swipe</p>
+									</div>
 								</div>
+
 								<div class="we-talented__email email-we-talented">
 									<!-- <div class="email-we-talented__top"> -->
 									<div class="email-we-talented__title">
@@ -92,12 +74,8 @@
 									<div id="errorMessage" class="message error">
 										Doesn't match email format
 									</div>
-									<div class="swipe-indicator"></div>
 								</div>
 							</div>
-							<!-- <div>
-          <button onclick="submitEmail()">Подписаться</button>
-        </div> -->
 							<div class="we-talented__footer">
 								<p class="we-talented__author">
 									Made with <span class="heart-icon">&#10084;&#65039;</span> by
@@ -138,52 +116,6 @@
 						</div>
 					</div>
 				</div>
-
-				<!-- <script>
-		
-    </script> -->
-
-				<!-- <script>
-      // Функция для отправки email на сервер
-      function submitEmail() {
-        var email = document.getElementById("email").value;
-
-        // Проверка формата email
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-          alert("Неверный формат email");
-          return;
-        }
-
-        // Отправка данных на сервер (AJAX или другой метод)
-        // ...
-
-        // Добавление записи в базу данных (email, дата ввода, IP адрес)
-        var currentDate = new Date().toISOString();
-        var ipAddress = "..."; // Получение IP адреса на сервере
-        var data = {
-          email: email,
-          date: currentDate,
-          ip: ipAddress,
-        };
-
-        // Отправка данных на сервер (AJAX или другой метод)
-        // ...
-      }
-    </script> -->
-
-				<!-- <script>
-      // Проверка наличия согласия на использование куки
-      function checkCookieConsent() {
-        if (!localStorage.getItem("cookieConsent")) {
-          if (confirm("Мы используем куки на нашем сайте. Принять?")) {
-            localStorage.setItem("cookieConsent", true);
-          }
-        }
-      }
-
-      checkCookieConsent();
-    </script> -->
 			</div>
 			<div class="we-talented__cookie cookie__banner">
 				<div class="cookie__message">
@@ -231,7 +163,7 @@
 	</div>
 </div>
  -->
-	<script src="js/app.min.js?_v=20240501113516"></script>
+	<script src="js/app.min.js?_v=20240501153033"></script>
 </body>
 
 </html>

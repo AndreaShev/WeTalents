@@ -224,6 +224,7 @@ h6 {
 .we-talented__promo {
   margin-bottom: 2.2381378693vh;
   max-width: 27.7777777778vw;
+  position: relative;
 }
 
 .we-talented__title {
@@ -580,9 +581,9 @@ h6 {
 }
 
 .animate {
-  -webkit-transform: translateY(-40%);
-      -ms-transform: translateY(-40%);
-          transform: translateY(-40%);
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .message {
@@ -620,8 +621,46 @@ h6 {
   color: #da3832;
 }
 
-body {
-  overflow: hidden;
+/* Стили для анимации кнопки и свайпа на мобильных устройствах */
+
+.swipe-indicator {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  bottom: -50px;
+  left: 50vw;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 100px;
+  width: 100px;
+  height: 40px;
+  background: #f8f8f8;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.swipe-indicator p {
+  font-weight: 400;
+  font-size: 13px;
+  padding-left: 13px;
+  position: relative;
+}
+
+.swipe-indicator p::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 0px;
+  background-image: url("/img/arrow-up.svg");
+  display: inline-block;
+  height: 9.5px;
+  width: 11.5px;
 }
 
 /**
