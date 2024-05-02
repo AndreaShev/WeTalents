@@ -217,7 +217,7 @@ h6 {
 
 .we-talented__mainblock {
   display: block;
-  margin-bottom: 14.8612354521vh;
+  margin-bottom: 13.0707251567vh;
   margin-top: 8.7735004476vh;
 }
 
@@ -249,15 +249,15 @@ h6 {
   line-height: 1.5;
 }
 
-@supports (font-size: clamp( 1.125rem , 0.885230179rem  +  1.0230179028vw , 1.875rem )) {
+@supports (font-size: clamp( 1.125rem , 0.3865384615rem  +  1.5384615385vw , 1.875rem )) {
   .we-talented__text {
-    font-size: clamp( 1.125rem , 0.885230179rem  +  1.0230179028vw , 1.875rem );
+    font-size: clamp( 1.125rem , 0.3865384615rem  +  1.5384615385vw , 1.875rem );
   }
 }
 
-@supports not (font-size: clamp( 1.125rem , 0.885230179rem  +  1.0230179028vw , 1.875rem )) {
+@supports not (font-size: clamp( 1.125rem , 0.3865384615rem  +  1.5384615385vw , 1.875rem )) {
   .we-talented__text {
-    font-size: calc(1.125rem + 0.75 * (100vw - 23.4375rem) / 73.3125);
+    font-size: calc(1.125rem + 0.75 * (100vw - 48rem) / 48.75);
   }
 }
 
@@ -344,19 +344,22 @@ h6 {
 
 .email-we-talented {
   max-width: 490px;
+  width: 31.65374677vw;
   height: 250px;
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width=\"490\" height=\"250\" viewBox=\"0 0 490 250\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg filter=\"url%28%23filter0_d_74_1949%29\"%3E%3Cpath fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M373 32C381.577 32 388.754 26.0004 390.561 17.9688C391.046 15.8135 392.791 14 395 14H451C458.18 14 464 19.8203 464 27V211C464 218.18 458.18 224 451 224H395C392.791 224 391.046 222.186 390.561 220.031C388.754 212 381.577 206 373 206C364.423 206 357.246 212 355.439 220.031C354.954 222.186 353.209 224 351 224H27C19.8203 224 14 218.18 14 211V27C14 19.8203 19.8203 14 27 14H351C353.209 14 354.954 15.8135 355.439 17.9688C357.246 26.0004 364.423 32 373 32Z\" fill=\"white\"/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id=\"filter0_d_74_1949\" x=\"0\" y=\"0\" width=\"490\" height=\"250\" filterUnits=\"userSpaceOnUse\" color-interpolation-filters=\"sRGB\"%3E%3CfeFlood flood-opacity=\"0\" result=\"BackgroundImageFix\" /%3E%3CfeColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\" result=\"hardAlpha\" /%3E%3CfeOffset dx=\"6\" dy=\"6\" /%3E%3CfeGaussianBlur stdDeviation=\"10\" /%3E%3CfeComposite in2=\"hardAlpha\" operator=\"out\" /%3E%3CfeColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0\" /%3E%3CfeBlend mode=\"normal\" in2=\"BackgroundImageFix\" result=\"effect1_dropShadow_74_1949\" /%3E%3CfeBlend mode=\"normal\" in=\"SourceGraphic\" in2=\"effect1_dropShadow_74_1949\" result=\"shape\" /%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
   position: relative;
+  background-size: cover;
+  background-position: left;
 }
 
 .email-we-talented__title {
   font-weight: 400;
   font-size: 18px;
-  max-width: 219px;
+  min-width: 220px;
   line-height: 1.2;
-  margin-bottom: 25px;
-  padding-top: 38px;
-  padding-left: 30px;
+  margin-bottom: 2.2381378693vh;
+  padding-top: 3.4019695613vh;
+  padding-left: 1.9379844961vw;
 }
 
 .email-we-talented__animation {
@@ -387,13 +390,13 @@ h6 {
 
 .email-we-talented__input {
   position: relative;
-  width: 25.1937984496vw;
   height: 60px;
-  padding-left: 30px;
+  padding-left: 1.9379844961vw;
 }
 
 .email-we-talented__input input {
-  width: 100%;
+  max-width: 390px;
+  width: 25.1937984496vw;
   height: 100%;
   border: none;
   outline: none;
@@ -423,7 +426,7 @@ h6 {
 .email-we-talented__input .indicator {
   position: absolute;
   top: 50%;
-  right: 10px;
+  right: 15%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -449,8 +452,24 @@ h6 {
   opacity: 1;
 }
 
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin-right: 0.9689922481vw !important;
+  margin-left: 0px !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:last-child,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet:last-child {
+  margin-right: 0px !important;
+}
+
 .swiper-pagination-bullet {
-  width: calc((100% - (var(--slide-count) - 1) * var(--slide-margin)) / var(--slide-count)) !important;
+  width: calc((100% - (var(--slide-count) - 1) * var(--bullet-margin)) / var(--slide-count)) !important;
   height: 6px !important;
   background: rgba(26, 26, 26, 0.6) !important;
   border-radius: 100px !important;
@@ -465,11 +484,6 @@ h6 {
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   bottom: 49px !important;
-}
-
-.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
-  margin: 0 !important;
 }
 
 .heart-icon {
@@ -608,7 +622,7 @@ h6 {
   top: -5px;
   left: 0px;
   display: inline-block;
-  background-image: url("img/mark.svg");
+  background-image: url("../img/mark.svg");
   height: 28px;
   width: 28px;
 }
@@ -625,42 +639,7 @@ h6 {
 
 .swipe-indicator {
   display: none;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: absolute;
-  bottom: -50px;
-  left: 50vw;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  border-radius: 100px;
-  width: 100px;
-  height: 40px;
-  background: #f8f8f8;
-  cursor: pointer;
-  z-index: 5;
-}
-
-.swipe-indicator p {
-  font-weight: 400;
-  font-size: 13px;
-  padding-left: 13px;
-  position: relative;
-}
-
-.swipe-indicator p::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 0px;
-  background-image: url("/img/arrow-up.svg");
-  display: inline-block;
-  height: 9.5px;
-  width: 11.5px;
+  opacity: 0;
 }
 
 /**
@@ -1470,8 +1449,18 @@ button.swiper-pagination-bullet {
 }
 
 @media (max-width: 48em) {
+  .we-talented__text {
+    font-size: inherit;
+  }
+
   .cookie__banner {
     gap: inherit;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .email-we-talented__input input {
+    width: 100%;
   }
 }
 
@@ -1495,7 +1484,7 @@ button.swiper-pagination-bullet {
 
   .we-talented__content {
     border-radius: 20px;
-    width: 85.6770833333vw;
+    width: 89.5833333333vw;
   }
 
   .we-talented__mainblock {
@@ -1504,9 +1493,9 @@ button.swiper-pagination-bullet {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-column-gap: 5.7291666667vw;
+       -moz-column-gap: 5.7291666667vw;
+            column-gap: 5.7291666667vw;
     margin-bottom: 2.9296875vh;
   }
 
@@ -1567,22 +1556,37 @@ button.swiper-pagination-bullet {
     max-height: 66.69921875vh;
   }
 
+  .we-talented__slide img {
+    height: 66.69921875vh;
+  }
+
   .email-we-talented {
     max-width: 369px;
+    width: 369px;
     height: 193px;
     background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 width=%27369%27 height=%27193%27 viewBox=%270 0 369 193%27 fill=%27none%27%3E%3Cg filter=%27url%28%23filter0_d_84_3293%29%27%3E%3Cpath fill-rule=%27evenodd%27 clip-rule=%27evenodd%27 d=%27M289 29C295.916 29 301.738 24.3199 303.473 17.9542C304.054 15.8228 305.791 14 308 14H336C343.18 14 349 19.8203 349 27V154C349 161.18 343.18 167 336 167H308C305.791 167 304.054 165.177 303.473 163.046C301.738 156.68 295.916 152 289 152C282.084 152 276.262 156.68 274.527 163.046C273.946 165.177 272.209 167 270 167H27C19.8203 167 14 161.18 14 154V27C14 19.8203 19.8203 14 27 14H270C272.209 14 273.946 15.8228 274.527 17.9542C276.262 24.3199 282.084 29 289 29Z%27 fill=%27white%27 /%3E%3C/g%3E%3Cdefs%3E%3Cfilter id=%27filter0_d_84_3293%27 x=%270%27 y=%270%27 width=%27375%27 height=%27193%27 filterUnits=%27userSpaceOnUse%27 color-interpolation-filters=%27sRGB%27%3E%3CfeFlood flood-opacity=%270%27 result=%27BackgroundImageFix%27 /%3E%3CfeColorMatrix in=%27SourceAlpha%27 type=%27matrix%27 values=%270 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0%27 result=%27hardAlpha%27 /%3E%3CfeOffset dx=%276%27 dy=%276%27 /%3E%3CfeGaussianBlur stdDeviation=%2710%27 /%3E%3CfeComposite in2=%27hardAlpha%27 operator=%27out%27 /%3E%3CfeColorMatrix type=%27matrix%27 values=%270 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0%27 /%3E%3CfeBlend mode=%27normal%27 in2=%27BackgroundImageFix%27 result=%27effect1_dropShadow_84_3293%27 /%3E%3CfeBlend mode=%27normal%27 in=%27SourceGraphic%27 in2=%27effect1_dropShadow_84_3293%27 result=%27shape%27 /%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
   }
 
   .email-we-talented__title {
     padding-top: 16px;
-    padding-left: 20px;
+    padding-left: 2.6041666667vw;
     margin-bottom: 10px;
+    min-width: 245px;
   }
 
   .email-we-talented__input {
-    width: 38.4114583333vw;
+    width: 90%;
     height: 50px;
     padding-left: 20px;
+  }
+
+  .email-we-talented__input .indicator {
+    right: 5%;
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin-right: 0.171343206vw !important;
   }
 
   .swiper-pagination-bullet {
@@ -1668,6 +1672,49 @@ button.swiper-pagination-bullet {
     margin-top: 27px;
     padding-left: 20px;
   }
+
+  .swipe-indicator {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    opacity: 1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: absolute;
+    bottom: -50px;
+    left: 50vw;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    border-radius: 100px;
+    width: 100px;
+    height: 40px;
+    background: #f8f8f8;
+    cursor: pointer;
+    z-index: 5;
+  }
+
+  .swipe-indicator p {
+    font-weight: 400;
+    font-size: 13px;
+    padding-left: 13px;
+    position: relative;
+  }
+
+  .swipe-indicator p::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    background-image: url("../img/arrow-up.svg");
+    display: inline-block;
+    height: 9.5px;
+    width: 11.5px;
+  }
 }
 
 @media (max-width: 29.99875em) {
@@ -1677,6 +1724,7 @@ button.swiper-pagination-bullet {
 
   .we-talented__mainblock {
     margin-bottom: 1.46484375vh;
+    display: block;
   }
 
   .we-talented__logo {

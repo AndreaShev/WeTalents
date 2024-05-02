@@ -3547,9 +3547,9 @@
             on: {
                 init: function() {
                     var slideCount = this.slides.length;
-                    var slideMargin = parseFloat(window.getComputedStyle(this.slides[0]).marginRight);
+                    var bulletMargin = parseFloat(window.getComputedStyle(this.pagination.bullets[0]).marginRight);
                     document.documentElement.style.setProperty("--slide-count", slideCount);
-                    document.documentElement.style.setProperty("--slide-margin", slideMargin + "px");
+                    document.documentElement.style.setProperty("--bullet-margin", bulletMargin + "px");
                     this.pagination.update();
                 }
             }
@@ -3632,6 +3632,10 @@
             talentForm.style.display = "none";
             talentFooter.style.display = "none";
             swipeButton.style.display = "flex";
+        } else {
+            talentForm.style.display = "block";
+            talentFooter.style.display = "block";
+            swipeButton.style.display = "none";
         }
     }
     window.addEventListener("DOMContentLoaded", checkContentFit);
