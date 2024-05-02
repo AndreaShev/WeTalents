@@ -608,7 +608,7 @@ h6 {
   top: -5px;
   left: 0px;
   display: inline-block;
-  background-image: url("/img/mark.svg");
+  background-image: url("img/mark.svg");
   height: 28px;
   width: 28px;
 }
