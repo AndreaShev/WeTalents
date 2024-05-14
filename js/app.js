@@ -3649,6 +3649,24 @@
         talentForm.style.display = "block";
         talentFooter.style.display = "block";
     }));
+    const swipeArea = document.getElementById("swipeArea");
+    let startY;
+    swipeArea.addEventListener("touchstart", handleTouchStart);
+    swipeArea.addEventListener("touchmove", handleTouchMove);
+    function handleTouchStart(event) {
+        startY = event.touches[0].clientY;
+    }
+    function handleTouchMove(event) {
+        const currentY = event.touches[0].clientY;
+        const deltaY = currentY - startY;
+        if (deltaY < -50) {
+            contentBlock.classList.add("animate");
+            swipeButton.style.display = "none";
+            talentForm.style.display = "block";
+            talentFooter.style.display = "block";
+            console.log("Выполняется свайп вверх");
+        }
+    }
     window["FLS"] = true;
     isWebp();
 })();
