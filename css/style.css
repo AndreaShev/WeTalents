@@ -202,8 +202,7 @@ h6 {
 .we-talented__content {
   width: 26.0416666667vw;
   position: relative;
-  margin-top: 10.7430617726vh;
-  margin-bottom: 9.4897045658vh;
+  margin-top: 6.266786034vh;
   z-index: 2;
   background-color: #fff;
   -webkit-transition: -webkit-transform 1s ease;
@@ -218,7 +217,7 @@ h6 {
 
 .we-talented__mainblock {
   display: block;
-  margin-top: 8.7735004476vh;
+  margin-top: 5.1924798568vh;
 }
 
 .we-talented__promo {
@@ -268,8 +267,6 @@ h6 {
 .we-talented__footer {
   font-weight: 400;
   font-size: 14px;
-  max-width: 100%;
-  overflow: hidden;
   color: #1a1a1a;
 }
 
@@ -314,6 +311,7 @@ h6 {
      object-fit: cover;
   /* Масштабируем и обрезаем изображение для заполнения контейнера */
   height: 87.466427932vh;
+  max-height: 1118px;
 }
 
 .email-we-talented {
@@ -574,9 +572,9 @@ h6 {
 }
 
 .animate {
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .message {
@@ -1492,12 +1490,6 @@ button.swiper-pagination-bullet {
   }
 }
 
-@media (max-width: 61.99875em) {
-  .email-we-talented__title {
-    padding-left: 0px;
-  }
-}
-
 @media (max-width: 47.99875em) {
   .we-talented__body {
     -ms-flex-wrap: wrap;
@@ -1525,12 +1517,10 @@ button.swiper-pagination-bullet {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
     -webkit-column-gap: 5.7291666667vw;
        -moz-column-gap: 5.7291666667vw;
             column-gap: 5.7291666667vw;
-    margin-bottom: 2.9296875vh;
+    margin-top: 7.12890625vh;
   }
 
   .we-talented__logo {
@@ -1560,6 +1550,7 @@ button.swiper-pagination-bullet {
   }
 
   .we-talented__image {
+    margin-bottom: 0;
     width: 89.5833333333vw;
     margin-top: 5.2083333333vh;
   }
@@ -1729,7 +1720,7 @@ button.swiper-pagination-bullet {
   }
 
   .we-talented__mainblock {
-    margin-bottom: 1.46484375vh;
+    margin-top: 3.5714285714vh;
     display: block;
   }
 

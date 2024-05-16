@@ -3580,7 +3580,12 @@
     const moveButton = document.getElementById("logo");
     const contentBlock = document.querySelector(".we-talented__content");
     moveButton.addEventListener("click", (function() {
-        if (window.innerWidth < 767) contentBlock.classList.toggle("animate");
+        if (window.innerWidth < 479) {
+            contentBlock.classList.toggle("animate");
+            swipeButton.style.display = "none";
+            talentForm.style.display = "block";
+            talentFooter.style.display = "block";
+        }
     }));
     window.addEventListener("DOMContentLoaded", (function() {
         let emailForm = document.getElementById("email-form");
@@ -3623,12 +3628,10 @@
         }
     }));
     function checkContentFit() {
-        const contentHeight = document.documentElement.scrollHeight;
-        const viewportHeight = window.innerHeight;
         const swipeButton = document.querySelector(".swipe-indicator");
         const talentForm = document.querySelector(".we-talented__email");
         const talentFooter = document.querySelector(".we-talented__footer");
-        if (contentHeight > viewportHeight && window.innerWidth < 767) {
+        if (window.innerWidth < 479) {
             talentForm.style.display = "none";
             talentFooter.style.display = "none";
             swipeButton.style.display = "flex";
@@ -3636,6 +3639,7 @@
             talentForm.style.display = "block";
             talentFooter.style.display = "block";
             swipeButton.style.display = "none";
+            contentBlock.classList.remove("animate");
         }
     }
     window.addEventListener("DOMContentLoaded", checkContentFit);
@@ -3644,29 +3648,11 @@
     const talentForm = document.querySelector(".we-talented__email");
     const talentFooter = document.querySelector(".we-talented__footer");
     swipeButton.addEventListener("click", (function() {
-        contentBlock.classList.add("animate");
+        contentBlock.classList.toggle("animate");
         swipeButton.style.display = "none";
         talentForm.style.display = "block";
         talentFooter.style.display = "block";
     }));
-    const swipeArea = document.getElementById("swipeArea");
-    let startY;
-    swipeArea.addEventListener("touchstart", handleTouchStart);
-    swipeArea.addEventListener("touchmove", handleTouchMove);
-    function handleTouchStart(event) {
-        startY = event.touches[0].clientY;
-    }
-    function handleTouchMove(event) {
-        const currentY = event.touches[0].clientY;
-        const deltaY = currentY - startY;
-        if (deltaY < -50) {
-            contentBlock.classList.add("animate");
-            swipeButton.style.display = "none";
-            talentForm.style.display = "block";
-            talentFooter.style.display = "block";
-            console.log("Выполняется свайп вверх");
-        }
-    }
     window["FLS"] = true;
     isWebp();
 })();
