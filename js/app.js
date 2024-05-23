@@ -3579,6 +3579,9 @@
     }));
     const moveButton = document.getElementById("logo");
     const contentBlock = document.querySelector(".we-talented__content");
+    const swipeButton = document.querySelector(".swipe-indicator");
+    const talentForm = document.querySelector(".we-talented__email");
+    const talentFooter = document.querySelector(".we-talented__footer");
     moveButton.addEventListener("click", (function() {
         if (window.innerWidth < 479) {
             contentBlock.classList.toggle("animate");
@@ -3644,9 +3647,6 @@
     }
     window.addEventListener("DOMContentLoaded", checkContentFit);
     window.addEventListener("resize", checkContentFit);
-    const swipeButton = document.querySelector(".swipe-indicator");
-    const talentForm = document.querySelector(".we-talented__email");
-    const talentFooter = document.querySelector(".we-talented__footer");
     swipeButton.addEventListener("click", (function() {
         contentBlock.classList.toggle("animate");
         swipeButton.style.display = "none";
