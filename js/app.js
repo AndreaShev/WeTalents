@@ -3651,8 +3651,7 @@
         function handleTouchMove(event) {
             const currentY = event.touches[0].clientY;
             const deltaY = currentY - startY;
-            if (deltaY < -50) swipeContent();
-            if (deltaY < 50) checkContentFit();
+            if (deltaY < -1) swipeContent(); else checkContentFit();
         }
     }
     window["FLS"] = true;
