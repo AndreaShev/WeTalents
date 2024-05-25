@@ -3638,21 +3638,23 @@
         }
     }
     window.addEventListener("DOMContentLoaded", checkContentFit);
-    swipeButton.addEventListener("click", swipeContent);
     moveButton.addEventListener("click", swipeContent);
+    swipeButton.addEventListener("click", swipeContent);
     const swipeArea = document.getElementById("swipeArea");
     let startY;
     swipeArea.addEventListener("touchstart", handleTouchStart);
     swipeArea.addEventListener("touchmove", handleTouchMove);
     function handleTouchStart(event) {
-        startY = event.touches[0].clientY;
+        if (window.innerWidth < 479) startY = event.touches[0].clientY;
     }
     function handleTouchMove(event) {
-        const currentY = event.touches[0].clientY;
-        const deltaY = currentY - startY;
-        if (deltaY < -50) {
-            console.log("Выполняется свайп вверх");
-            swipeContent();
+        if (window.innerWidth < 479) {
+            const currentY = event.touches[0].clientY;
+            const deltaY = currentY - startY;
+            if (deltaY < -50) {
+                console.log("Выполняется свайп вверх");
+                swipeContent();
+            }
         }
     }
     window["FLS"] = true;
