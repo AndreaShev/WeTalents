@@ -3627,12 +3627,7 @@
             talentForm.classList.toggle("none");
             talentFooter.classList.toggle("none");
             swipeButton.classList.toggle("flex");
-        } else {
-            contentBlock.classList.remove("animate");
-            talentForm.classList.remove("none");
-            talentFooter.classList.remove("none");
-            swipeButton.classList.remove("flex");
-        }
+        } else contentBlock.classList.remove("animate");
     }
     function swipeContent() {
         if (window.innerWidth < 479) {
@@ -3643,7 +3638,6 @@
         }
     }
     window.addEventListener("DOMContentLoaded", checkContentFit);
-    window.addEventListener("resize", checkContentFit);
     moveButton.addEventListener("click", swipeContent);
     swipeButton.addEventListener("click", swipeContent);
     if (window.innerWidth < 479) {
@@ -3657,10 +3651,8 @@
         function handleTouchMove(event) {
             const currentY = event.touches[0].clientY;
             const deltaY = currentY - startY;
-            if (deltaY < -50) {
-                console.log("Выполняется свайп вверх");
-                swipeContent();
-            }
+            if (deltaY < -50) swipeContent();
+            if (deltaY < 50) checkContentFit();
         }
     }
     window["FLS"] = true;
