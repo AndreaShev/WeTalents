@@ -3577,19 +3577,6 @@
     acceptButtons.forEach((function(button) {
         button.addEventListener("click", hideCookieBanner);
     }));
-    const moveButton = document.getElementById("logo");
-    const contentBlock = document.querySelector(".we-talented__content");
-    const swipeButton = document.querySelector(".swipe-indicator");
-    const talentForm = document.querySelector(".we-talented__email");
-    const talentFooter = document.querySelector(".we-talented__footer");
-    moveButton.addEventListener("click", (function() {
-        if (window.innerWidth < 479) {
-            contentBlock.classList.toggle("animate");
-            swipeButton.style.display = "none";
-            talentForm.style.display = "block";
-            talentFooter.style.display = "block";
-        }
-    }));
     window.addEventListener("DOMContentLoaded", (function() {
         let emailForm = document.getElementById("email-form");
         emailForm.addEventListener("submit", (function(event) {
@@ -3630,29 +3617,44 @@
             }
         }
     }));
+    const moveButton = document.getElementById("logo");
+    const contentBlock = document.querySelector(".we-talented__content");
+    const swipeButton = document.querySelector(".swipe-indicator");
+    const talentForm = document.querySelector(".we-talented__email");
+    const talentFooter = document.querySelector(".we-talented__footer");
     function checkContentFit() {
-        const swipeButton = document.querySelector(".swipe-indicator");
-        const talentForm = document.querySelector(".we-talented__email");
-        const talentFooter = document.querySelector(".we-talented__footer");
         if (window.innerWidth < 479) {
-            talentForm.style.display = "none";
-            talentFooter.style.display = "none";
-            swipeButton.style.display = "flex";
-        } else {
-            talentForm.style.display = "block";
-            talentFooter.style.display = "block";
-            swipeButton.style.display = "none";
-            contentBlock.classList.remove("animate");
+            talentForm.classList.toggle("none");
+            talentFooter.classList.toggle("none");
+            swipeButton.classList.toggle("flex");
+        } else contentBlock.classList.remove("animate");
+    }
+    function swipeContent() {
+        if (window.innerWidth < 479) {
+            contentBlock.classList.toggle("animate");
+            swipeButton.classList.toggle("flex");
+            talentForm.classList.toggle("none");
+            talentFooter.classList.toggle("none");
         }
     }
     window.addEventListener("DOMContentLoaded", checkContentFit);
-    window.addEventListener("resize", checkContentFit);
-    swipeButton.addEventListener("click", (function() {
-        contentBlock.classList.toggle("animate");
-        swipeButton.style.display = "none";
-        talentForm.style.display = "block";
-        talentFooter.style.display = "block";
-    }));
+    swipeButton.addEventListener("click", swipeContent);
+    moveButton.addEventListener("click", swipeContent);
+    const swipeArea = document.getElementById("swipeArea");
+    let startY;
+    swipeArea.addEventListener("touchstart", handleTouchStart);
+    swipeArea.addEventListener("touchmove", handleTouchMove);
+    function handleTouchStart(event) {
+        startY = event.touches[0].clientY;
+    }
+    function handleTouchMove(event) {
+        const currentY = event.touches[0].clientY;
+        const deltaY = currentY - startY;
+        if (deltaY < -50) {
+            console.log("Выполняется свайп вверх");
+            swipeContent();
+        }
+    }
     window["FLS"] = true;
     isWebp();
 })();

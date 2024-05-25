@@ -658,6 +658,16 @@ h6 {
       touch-action: pan-y;
 }
 
+.none {
+  display: none;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /**
  * Swiper 7.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -1677,9 +1687,7 @@ button.swiper-pagination-bullet {
   }
 
   .swipe-indicator {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    display: none;
     opacity: 1;
     -webkit-box-align: center;
         -ms-flex-align: center;
