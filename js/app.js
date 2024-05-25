@@ -3627,7 +3627,12 @@
             talentForm.classList.toggle("none");
             talentFooter.classList.toggle("none");
             swipeButton.classList.toggle("flex");
-        } else contentBlock.classList.remove("animate");
+        } else {
+            contentBlock.classList.remove("animate");
+            talentForm.classList.remove("none");
+            talentFooter.classList.remove("none");
+            swipeButton.classList.remove("flex");
+        }
     }
     function swipeContent() {
         if (window.innerWidth < 479) {
@@ -3638,17 +3643,18 @@
         }
     }
     window.addEventListener("DOMContentLoaded", checkContentFit);
+    window.addEventListener("resize", checkContentFit);
     moveButton.addEventListener("click", swipeContent);
     swipeButton.addEventListener("click", swipeContent);
-    const swipeArea = document.getElementById("swipeArea");
-    let startY;
-    swipeArea.addEventListener("touchstart", handleTouchStart);
-    swipeArea.addEventListener("touchmove", handleTouchMove);
-    function handleTouchStart(event) {
-        if (window.innerWidth < 479) startY = event.touches[0].clientY;
-    }
-    function handleTouchMove(event) {
-        if (window.innerWidth < 479) {
+    if (window.innerWidth < 479) {
+        const swipeArea = document.getElementById("swipeArea");
+        let startY;
+        swipeArea.addEventListener("touchstart", handleTouchStart);
+        swipeArea.addEventListener("touchmove", handleTouchMove);
+        function handleTouchStart(event) {
+            startY = event.touches[0].clientY;
+        }
+        function handleTouchMove(event) {
             const currentY = event.touches[0].clientY;
             const deltaY = currentY - startY;
             if (deltaY < -50) {
