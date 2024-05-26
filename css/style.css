@@ -1793,15 +1793,13 @@ button.swiper-pagination-bullet {
   }
 
   .cookie__button {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 100%;
-            flex: 0 1 100%;
+    width: 100%;
   }
 
   .cookie__button-black {
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 48.5%;
-            flex: 0 1 48.5%;
+        -ms-flex: 0 1 48.6%;
+            flex: 0 1 48.6%;
   }
 }
 
