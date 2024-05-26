@@ -567,7 +567,7 @@ h6 {
 }
 
 [class*=__container] {
-  padding-left: 8.6805555556vw;
+  padding-left: 4.0509259259vw;
   padding-right: 4.0509259259vw;
 }
 
@@ -610,6 +610,11 @@ h6 {
   font-weight: 400;
   font-size: 13px;
   color: #da3832;
+}
+
+body {
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 /* Стили для анимации кнопки и свайпа на мобильных устройствах */
